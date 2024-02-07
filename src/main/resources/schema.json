@@ -1,0 +1,73 @@
+{
+  "name": "MyClass",
+  "type": "record",
+  "namespace": "com.apache.avro",
+  "fields": [
+    {
+      "name": "inventoryList",
+      "type": {
+        "name": "inventoryList",
+        "type": "record",
+        "fields": [
+          {
+            "name": "header",
+            "type": {
+              "name": "header",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "listId",
+                  "type": "string"
+                },
+                {
+                  "name": "defaultInstock",
+                  "type": "boolean"
+                },
+                {
+                  "name": "useBundleInventoryOnly",
+                  "type": "boolean"
+                },
+                {
+                  "name": "onOrder",
+                  "type": "boolean"
+                }
+              ]
+            }
+          },
+          {
+            "name": "records",
+            "type": {
+              "type": "array",
+              "items": {
+                "name": "records",
+                "type": "record",
+                "fields": [
+                  {
+                    "name": "productId",
+                    "type": "int"
+                  },
+                  {
+                    "name": "preorderBackorderHandling",
+                    "type": "string"
+                  },
+                  {
+                    "name": "allocation",
+                    "type": "int"
+                  },
+                  {
+                    "name": "allocationTimestamp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "perpetual",
+                    "type": "boolean"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
